@@ -50,6 +50,75 @@
 </body>
 </html>
 <script>
-    
+    //selecionando os elementos através de seus ID
+
+    const inputElement = document.querySelector('#input');
+    const fromtElement = document.querySelector('#from');
+    const toElement = document.querySelector('#to');
+    const outputElement = document.querySelector('#output');
+    const messageElement = document.querySelector('#message');
+
+    function Conversor(){
+        //selecionando apenas o valor dos campos DE e PARA
+
+        const fromValue = fromElement.value;
+        const toValue = toElement.value;
+
+        //se a unidade for igual a unidade de saida
+        if(fromValue == toValue){
+
+        outputElement.value = inputElement.value
+        messageElement.textContent = '';
+        return; //retorna (finaliza a função)
+
+        }
+
+        //passo 1: converter o valor de entrada para metros e gravar navariavel METERS
+
+        let meters;
+
+        switch(fromValue){
+            case 'm':
+                meters = inputElement.value;
+                break;
+
+            case 'km':
+                meters = inputElement.value * 1000;
+                break;
+
+            case 'cm':
+                meters = inputElement.value / 100;
+                break;
+
+            case 'mm':
+                meter = inputElement / 1000;
+                break;   
+        }
+
+        //passo 2: converte o valor em metros para o valor de saída e salvar na váriavel RESULT
+
+        let result;
+
+        switch(toValue){
+
+            case 'm':
+                result = meters ;
+                break;
+
+            case 'km':
+                result = meters / 1000;
+                break;
+
+            case 'cm':
+                result = meters * 100;
+                break;
+
+            case 'mm':
+                result = meters * 1000;
+            
+
+        }
+
+    }
 
 </script>
