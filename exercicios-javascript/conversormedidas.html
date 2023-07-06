@@ -32,7 +32,7 @@
         <option value="mm">Milímetro(s)</option>
     </select>
 
-    <button id="btn-converter" class="btn">CONVERTER</button>
+    <button id="btn-converter" class="btn" onclick="Conversor()">CONVERTER</button>
     <br>
     <br>
     <label for="output">Resultado:</label>
@@ -57,6 +57,9 @@
     const toElement = document.querySelector('#to');
     const outputElement = document.querySelector('#output');
     const messageElement = document.querySelector('#message');
+    const convertButton = document.querySelector('btn-converter')
+
+    convertButton.addEventListener("click", Conversor())
 
     function Conversor(){
         //selecionando apenas o valor dos campos DE e PARA
@@ -118,6 +121,9 @@
             
 
         }
+
+        //Exibir o resultado no output
+        outputElement.value = result;
 
     }
 
